@@ -19,6 +19,8 @@
   </div>
 @endsection
 
+@section('sidebar-main')
+@endsection
 {{-- Javascript --}}
 @push('header')
   <script src="{{ asset('assets/js/jquery.js') }}" charset="utf-8"></script>

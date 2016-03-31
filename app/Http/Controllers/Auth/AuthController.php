@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -68,5 +70,35 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function showLoginForm()
+    {
+      if (Auth::check()) {
+        return redirect()->intended('dashboard');
+      } else {
+        return view('auth.login');
+      }
+    }
+
+    public function login(Request $request)
+    {
+      $username = $request->input('username');
+      $password = $request->input('password');
+
+      $validator = Validator::make($request->all(),[
+        'username'=>'required',
+        'password'=>'required'
+      ]);
+
+      if ($validator->fails()) {
+        return redirect('login')->withErrors($validator)->withInput();
+      } else {
+        if ( Auth::attempt(['username' => $username, 'password' => $password])) {
+          return redirect()->intended('dashboard');
+        } else {
+          return redirect('login')->withErrors($validator)->withInput();
+        }
+      }
     }
 }

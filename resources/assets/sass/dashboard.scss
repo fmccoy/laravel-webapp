@@ -1,0 +1,14 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+@import 'app/dashboard';

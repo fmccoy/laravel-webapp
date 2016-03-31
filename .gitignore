@@ -4,6 +4,9 @@ vendor/
 # Node specific
 node_modules/
 
+# Bower specific
+bower_components/
+
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/

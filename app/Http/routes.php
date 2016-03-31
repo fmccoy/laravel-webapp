@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.index');
+});
+
+Route::auth();
+
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('dashboard', 'HomeController@index');
+  Route::get('profile', 'HomeController@showProfile');
+  Route::get('settings', 'SettingsController@index');
+  Route::post('settings', 'SettingsController@update');
 });

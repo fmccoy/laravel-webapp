@@ -22,7 +22,8 @@ module.exports = function(grunt){
           sourcemap: 'none'
         },
         files: {
-          'public/assets/css/app.css': 'resources/assets/sass/app.scss'
+          'public/assets/css/public.css': 'resources/assets/sass/public.scss',
+          'public/assets/css/dashboard.css': 'resources/assets/sass/dashboard.scss'
         }
       }
     }

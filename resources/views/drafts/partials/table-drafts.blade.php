@@ -2,10 +2,13 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Style</th>
+      <th>Brewery</th>
+      <th>Available</th>
       <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
-    @each('breweries.partials.table-row-breweries', $breweries, 'brewery')
+    @each('drafts.partials.table-row-drafts', $drafts, 'draft')
   </tbody>
 </table>

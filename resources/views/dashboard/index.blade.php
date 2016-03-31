@@ -6,7 +6,6 @@
 @endsection
 
 @section('sidebar-main')
-  <ul class="nav nav-sidebar">
-    <li><a href="#">Link</a></li>
-  </ul>
+  @parent
+  <li><a href="#">Link</a></li>
 @endsection

@@ -22,4 +22,5 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('profile', 'HomeController@showProfile');
   Route::get('settings', 'SettingsController@index');
   Route::post('settings', 'SettingsController@update');
+  Route::resource('breweries', 'BreweriesController');
 });

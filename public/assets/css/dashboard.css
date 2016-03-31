@@ -1,7 +1,11 @@
 body {
-  padding-top: 40px;
+  padding-top: 50px;
   padding-bottom: 40px;
   background-color: #eee; }
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee; }
 
 body {
   padding-top: 50px; }
@@ -55,3 +59,5 @@ body {
     padding-left: 40px; }
     .main .page-header {
       margin-top: 0; } }
+.logo {
+  max-width: 400px; }
